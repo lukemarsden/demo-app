@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-$color = "blue";
+$color = "green";
 if($color == "blue") {
     $hex = "#2196F3";
 } else if($color == "green") {
