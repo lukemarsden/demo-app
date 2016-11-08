@@ -1,5 +1,9 @@
 # A demo app
 
+```
+export PS1='$ '
+```
+
 Roll out changes using Kubernetes:
 
 ```

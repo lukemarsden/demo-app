@@ -7,9 +7,9 @@ services:
     volumes:
      - .:/var/www/html/
     depends_on:
-     - postgres
-  postgres:
+     - psql
+  psql:
     image: postgres
     environment:
-      POSTGRES_USER: demo
-      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: password

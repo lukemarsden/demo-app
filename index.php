@@ -21,7 +21,7 @@ if($color == "blue") {
 <input type="submit">
 </form>
 <?php
-$dbconn = pg_connect("host=postgres dbname=words user=demo password=mysecretpassword");
+$dbconn = pg_connect("host=psql dbname=testdb user=testuser password=password");
 if($_POST["word"]) {
     pg_query("insert into hello (word) values (".pg_escape_literal($_POST["word"]).")");
     ?>DONE<?
