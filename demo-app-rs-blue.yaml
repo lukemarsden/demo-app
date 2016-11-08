@@ -8,16 +8,15 @@ spec:
   selector:
     matchLabels:
       app: demo-app
-      version: green
   template:
     metadata:
       name: demo-app
       labels:
         app: demo-app
-        version: blue
     spec:
       containers:
       - name: demo-app
         image: lmarsden/demo-app:blue
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
