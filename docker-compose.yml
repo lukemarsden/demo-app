@@ -5,7 +5,7 @@ services:
     ports:
      - "80:80"
     volumes:
-     - .:/code
+     - .:/app
     depends_on:
      - postgres
   postgres:

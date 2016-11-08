@@ -8,23 +8,20 @@
 </head>
 <body>
 <?php
-$color = "red";
-if($color == "red") {
-    $hex = "#F44336";
+$color = "green";
+if($color == "blue") {
+    $hex = "#2196F3";
 } else if($color == "green") {
     $hex = "#4CAF50";
 }
 ?>
-<span style="background-color: #F44336; color:white;">Hello, world! I am the red version, running in container <?=`hostname`?> in <?=json_decode(file_get_contents("http://freegeoip.net/json"))["country_name"];?>.</span>
+<div style="padding:1em; background-color: <?=$hex?>; color:white; text-align:center;">Hello, world! I am the <?=$color?> version, running in container <?=`hostname`?> in <?=json_decode(file_get_contents("http://freegeoip.net/json"))->country_name;?>.</div>
 <form action="index.php">
 <p>Word: <input type="text"></p>
 <input type="submit">
 </form>
 <?php
 $dbconn = pg_connect("host=postgres dbname=words user=root password=password");
-if(!$dbconn) {
-    ?><p>No database connection.</p><?
-}
 if($_POST["text"]) {
     pg_query("insert into hello (name) values (".pg_escape_literal($_POST["text"]).")");
 }
@@ -33,7 +30,6 @@ $result = pg_query("select word from hello");
 while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
     ?><li><?=$line?></li><?
 }
-?></ul><?
-?>
+?></ul>
 </body>
 </html>
