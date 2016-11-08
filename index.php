@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-$color = "green";
+$color = "blue";
 if($color == "blue") {
     $hex = "#2196F3";
 } else if($color == "green") {
@@ -25,6 +25,7 @@ $dbconn = pg_connect("host=postgres dbname=words user=root password=password");
 if($_POST["text"]) {
     pg_query("insert into hello (name) values (".pg_escape_literal($_POST["text"]).")");
 }
+print pg_last_error();
 $result = pg_query("select word from hello");
 ?><ul><?
 while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
