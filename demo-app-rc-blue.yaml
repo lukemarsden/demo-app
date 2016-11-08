@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: demo-app
+  name: demo-app-blue
 spec:
   replicas: 8
   selector:
