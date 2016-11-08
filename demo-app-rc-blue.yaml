@@ -1,13 +1,12 @@
 ---
-apiVersion: extensions/v1beta1
-kind: ReplicaSet
+apiVersion: v1
+kind: ReplicationController
 metadata:
   name: demo-app
 spec:
   replicas: 8
   selector:
-    matchLabels:
-      app: demo-app
+    app: demo-app
   template:
     metadata:
       name: demo-app
