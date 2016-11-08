@@ -7,11 +7,13 @@ spec:
   replicas: 8
   selector:
     app: demo-app
+    version: blue
   template:
     metadata:
       name: demo-app
       labels:
         app: demo-app
+        version: blue
     spec:
       containers:
       - name: demo-app
