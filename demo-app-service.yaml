@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: demo-app
   labels:
-    name: demo-app
+    app: demo-app
 spec:
   type: NodePort
   ports:
